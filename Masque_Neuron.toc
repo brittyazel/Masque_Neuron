@@ -1,0 +1,12 @@
+## Interface: 80200
+## Title: Masque_Neuron
+## Notes: The default Masque skin for the Neuron World of Warcraft add-on
+## Author: Britt Yazel (aka Soyier)
+## X-Credits-Maintainer: Soyier
+## Version: @project-version@
+## DefaultState: enabled
+## Dependencies: Masque
+## OptionalDeps: Neuron
+## X-Email: bwyazel@gmail.com
+
+Masque_Neuron.lua
