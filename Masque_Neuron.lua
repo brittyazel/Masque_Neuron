@@ -4,18 +4,23 @@ if not MASQUE then
 end
 
 local AddOn, _ = ...
-local Version = GetAddOnMetadata(AddOn, "Version")
 
 --[[ Default ]]
-
 MASQUE:AddSkin("Neuron: Default", {
-	Description = "The default Masque skin for the Neuron World of Warcraft add-on",
-	Author = "Soyier",
-	Version = Version,
+	API_VERSION = 90002,
 	Shape = "Square",
-	Masque_Version = 80200,
 
-	-- Layer Settings
+	-- Info
+	Description = "The default Masque skin for the Neuron World of Warcraft add-on.",
+	Author = "Soyier",
+	Version = GetAddOnMetadata(AddOn, "Version"),
+	Websites = {
+		"https://www.curseforge.com/wow/addons/masque-neuron",
+		"https://github.com/brittyazel/Masque_Neuron",
+	},
+
+
+	-- Skin
 	Backdrop = {
 		Width = 42,
 		Height = 42,
@@ -192,4 +197,4 @@ MASQUE:AddSkin("Neuron: Default", {
 		OffsetX = 0,
 		OffsetY = -2,
 	},
-}, true)
+})
