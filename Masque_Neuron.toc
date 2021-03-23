@@ -1,12 +1,12 @@
 ## Interface: 90005
 ## Title: Masque: Neuron
 ## Notes: The default Masque skin for the Neuron World of Warcraft add-on
-## Author: Britt Yazel (aka Soyier)
-## X-Credits-Maintainer: Soyier
+## Author: Britt W. Yazel
 ## Version: @project-version@
 ## DefaultState: enabled
 ## Dependencies: Masque
 ## OptionalDeps: Neuron
+## X-Credits-Maintainer: Britt W. Yazel
 ## X-Email: bwyazel@gmail.com
 ## X-License: MIT
 

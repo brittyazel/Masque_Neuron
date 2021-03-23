@@ -1,3 +1,4 @@
+-- Masque: Neuron is a World of Warcraft® user interface addon.
 -- Copyright (c) 2017-2021 Britt W. Yazel
 -- This code is licensed under the MIT license (see LICENSE for details)
 
