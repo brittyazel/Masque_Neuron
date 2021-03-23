@@ -1,7 +1,7 @@
 Masque: Neuron
 ==============
 
-This is the default Neuron skin for the Masque World of Warcraft add-on. It is updated for Masque 8.2.5+
+This is the default Neuron skin for the Masque World of Warcraft add-on. It is updated for Masque 9.0+
 
 This add-on skin is meant to compliment the Neuron action bar add-on, and is mostly just a simple implementation of what Soyier prefers his buttons to look like. It features a rounded square design with a dark bloom effect in the middle. The idea with this theme was to be **simple**, **tasteful**, and **elegant**.
 
