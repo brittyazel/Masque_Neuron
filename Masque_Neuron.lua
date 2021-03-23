@@ -1,3 +1,6 @@
+-- Copyright (c) 2017-2021 Britt W. Yazel
+-- This code is licensed under the MIT license (see LICENSE for details)
+
 local MASQUE = LibStub("Masque", true)
 if not MASQUE then
 	return

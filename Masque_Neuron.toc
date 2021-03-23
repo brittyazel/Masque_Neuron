@@ -8,5 +8,6 @@
 ## Dependencies: Masque
 ## OptionalDeps: Neuron
 ## X-Email: bwyazel@gmail.com
+## X-License: MIT
 
 Masque_Neuron.lua
