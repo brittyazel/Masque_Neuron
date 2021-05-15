@@ -9,6 +9,9 @@ end
 
 local AddOn, _ = ...
 
+
+--declare our theme
+
 --[[ Default ]]
 MASQUE:AddSkin("Neuron: Default", {
 	API_VERSION = 90002,
