@@ -9,7 +9,6 @@ end
 
 local AddOn, _ = ...
 
-
 --declare our theme
 
 --[[ Default ]]
