@@ -1,0 +1,6 @@
+package-as: Masque_Neuron
+
+enable-nolib-creation: no
+
+ignore:
+  - README.md
