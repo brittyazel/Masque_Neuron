@@ -1,4 +1,4 @@
-## Interface: 11307
+## Interface: 11400
 ## Title: Masque: Neuron
 ## Notes: The default Masque skin for the Neuron World of Warcraft add-on
 ## Author: Britt W. Yazel
