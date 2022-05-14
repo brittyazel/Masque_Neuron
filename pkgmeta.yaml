@@ -1,6 +1,10 @@
 package-as: Masque_Neuron
 
 enable-nolib-creation: no
+enable-toc-creation: yes
+
+required-dependencies:
+  - masque
 
 ignore:
   - README.md
