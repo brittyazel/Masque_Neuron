@@ -1,6 +1,7 @@
 ## Interface: 90207
 ## Interface-Classic: 11403
 ## Interface-BCC: 20504
+## Interface-Wrath: 30400
 ## Title: Masque: Neuron
 ## Notes: The default Masque skin for the Neuron World of Warcraft add-on
 ## Author: Britt W. Yazel
