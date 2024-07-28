@@ -1,25 +1,25 @@
 -- Masque: Neuron is a World of Warcraft® user interface addon.
--- Copyright (c) 2017-2021 Britt W. Yazel
+-- Copyright (c) 2017-2024 Britt W. Yazel
 -- This code is licensed under the MIT license (see LICENSE for details)
 
-local MASQUE = LibStub("Masque", true)
+local MASQUE, MSQ_API = LibStub("Masque", true)
 if not MASQUE then
 	return
 end
 
-local AddOn, _ = ...
+local AddOn = ...
 
---declare our theme
+-- Declare our theme
 
 --[[ Default ]]
 MASQUE:AddSkin("Neuron: Default", {
-	API_VERSION = 90002,
+	API_VERSION = MSQ_API,
 	Shape = "Square",
 
 	-- Info
 	Description = "The default Masque skin for the Neuron World of Warcraft add-on.",
 	Author = "Soyier",
-	Version = GetAddOnMetadata(AddOn, "Version"),
+	Version = C_AddOns.GetAddOnMetadata(AddOn, "Version"),
 	Websites = {
 		"https://www.curseforge.com/wow/addons/masque-neuron",
 		"https://github.com/brittyazel/Masque_Neuron",
