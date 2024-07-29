@@ -2,7 +2,7 @@
 -- Copyright (c) 2017-2024 Britt W. Yazel
 -- This code is licensed under the MIT license (see LICENSE for details)
 
-local MASQUE, MSQ_API = LibStub("Masque", true)
+local MASQUE, MSQ_VERSION = LibStub("Masque", true)
 if not MASQUE then
 	return
 end
@@ -13,7 +13,7 @@ local AddOn = ...
 
 --[[ Default ]]
 MASQUE:AddSkin("Neuron: Default", {
-	API_VERSION = MSQ_API,
+	API_VERSION = MSQ_VERSION or 110000,
 	Shape = "Square",
 
 	-- Info
