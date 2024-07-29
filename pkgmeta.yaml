@@ -3,5 +3,10 @@ package-as: Masque_Neuron
 required-dependencies:
   - masque
 
+tools-used:
+  - devtool
+  - bugsack
+  - bug-grabber
+
 ignore:
   - README.md
