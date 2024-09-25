@@ -2,32 +2,34 @@
 -- Copyright (c) 2017-2024 Britt W. Yazel
 -- This code is licensed under the MIT license (see LICENSE for details)
 
-local MASQUE, MSQ_VERSION = LibStub("Masque", true)
+local addon = ...
+
+local MASQUE = LibStub("Masque", true)
 if not MASQUE then
 	return
 end
 
-local AddOn = ...
+local API_VERSION = 110000
 
 -- Declare our theme
 
 --[[ Default ]]
 MASQUE:AddSkin("Neuron: Default", {
-	API_VERSION = MSQ_VERSION or 110000,
+	API_VERSION = API_VERSION,
 	Shape = "Square",
 
 	-- Info
-	Description = "The default Masque skin for the Neuron World of Warcraft add-on.",
+	Description = "The default Masque skin originally created for Neuron action bars.",
 	Author = "Soyier",
-	Version = C_AddOns.GetAddOnMetadata(AddOn, "Version"),
+	Version = C_AddOns.GetAddOnMetadata(addon, "Version"),
 	Websites = {
 		"https://www.curseforge.com/wow/addons/masque-neuron",
 		"https://github.com/brittyazel/Masque_Neuron",
 	},
-
-
+	
 	-- Skin
 	Backdrop = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Backdrop]],
 		Width = 42,
 		Height = 42,
 		Color = {0, 0, 0, .6},
@@ -38,9 +40,10 @@ MASQUE:AddSkin("Neuron: Default", {
 		OffsetX = 0,
 		OffsetY = 0,
 		UseColor = true,
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Backdrop]],
 	},
+	
 	Icon = {
+		Texture = [[Interface\Icons\INV_Misc_Bag_08]],
 		Width = 29,
 		Height = 29,
 		TexCoords = {0.08, 0.92, 0.08, 0.92},
@@ -51,36 +54,18 @@ MASQUE:AddSkin("Neuron: Default", {
 		OffsetX = 0,
 		OffsetY = 0,
 	},
-	Flash = {
-		Width = 42,
-		Height = 42,
-		Texture = [[Interface\Buttons\UI-QuickslotRed]],
-		TexCoords = {0.2, 0.8, 0.2, 0.8},
-		Color = {1, 1, 1, 0.75},
-		BlendMode = "BLEND",
-		DrawLayer = "ARTWORK",
-		DrawLevel = 1,
-		Point = "CENTER",
-		RelPoint = "CENTER",
-		OffsetX = 0,
-		OffsetY = 0,
-	},
-	Cooldown = {
-		Width = 28,
-		Height = 28,
-		Color = {0, 0, 0, 0.6},
-		Point = "CENTER",
-		RelPoint = "CENTER",
-		OffsetX = 0,
-		OffsetY = 0,
-	},
+	
+	SlotIcon = "Icon",
+	
 	Normal = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Normal]],
 		Width = 42,
 		Height = 42,
 		Color = {0.2, 0.2, 0.2, 1},
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Normal]],
 	},
+
 	Pushed = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Overlay]],
 		Width = 42,
 		Height = 42,
 		BlendMode = "BLEND",
@@ -91,28 +76,61 @@ MASQUE:AddSkin("Neuron: Default", {
 		OffsetX = 0,
 		OffsetY = 0,
 		Color = {1, 1, 1, .5},
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Overlay]],
 	},
-	Border = {
+	
+	Flash = {
+		Texture = [[Interface\Buttons\UI-QuickslotRed]],
 		Width = 42,
 		Height = 42,
-		BlendMode = "ADD",
-		DrawLayer = "OVERLAY",
-		DrawLevel = 0,
+		TexCoords = {0.2, 0.8, 0.2, 0.8},
+		Color = {1, 1, 1, 0.75},
+		BlendMode = "BLEND",
+		DrawLayer = "ARTWORK",
+		DrawLevel = 1,
 		Point = "CENTER",
 		RelPoint = "CENTER",
 		OffsetX = 0,
 		OffsetY = 0,
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Border]],
 	},
-	Disabled = {
+
+	HotKey = {
+		JustifyH = "RIGHT",
+		JustifyV = "MIDDLE",
+		DrawLayer = "ARTWORK",
 		Width = 42,
-		Height = 42,
-		BlendMode = "BLEND",
-		Color = {1, 0, 0, 1},
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Border]],
+		Height = 10,
+		Point = "TOPRIGHT",
+		RelPoint = "TOPRIGHT",
+		OffsetX = -3,
+		OffsetY = -4,
 	},
+	
+	Count = {
+		JustifyH = "RIGHT",
+		JustifyV = "MIDDLE",
+		DrawLayer = "ARTWORK",
+		Width = 42,
+		Height = 10,
+		Point = "BOTTOMRIGHT",
+		RelPoint = "BOTTOMRIGHT",
+		OffsetX = -3,
+		OffsetY = 4,
+	},
+
+	Duration = {
+		JustifyH = "CENTER",
+		JustifyV = "MIDDLE",
+		DrawLayer = "ARTWORK",
+		Width = 42,
+		Height = 10,
+		Point = "TOP",
+		RelPoint = "BOTTOM",
+		OffsetX = 0,
+		OffsetY = -2,
+	},
+
 	Checked = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Border]],
 		Width = 42,
 		Height = 42,
 		BlendMode = "ADD",
@@ -123,8 +141,45 @@ MASQUE:AddSkin("Neuron: Default", {
 		RelPoint = "CENTER",
 		OffsetX = 0,
 		OffsetY = 0,
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Border]],
 	},
+
+	SlotHighlight = "Checked",
+
+	Name = {
+		Width = 42,
+		Height = 10,
+		JustifyH = "CENTER",
+		JustifyV = "BOTTOM",
+		OffsetY = 3,
+	},
+
+	Border = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Border]],
+		Width = 42,
+		Height = 42,
+		BlendMode = "ADD",
+		DrawLayer = "OVERLAY",
+		DrawLevel = 0,
+		Point = "CENTER",
+		RelPoint = "CENTER",
+		OffsetX = 0,
+		OffsetY = 0,
+	},
+
+	DebuffBorder = "Border",
+	
+	EnchantBorder = "Border",
+	
+	IconBorder = "Border",
+
+	Gloss = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Gloss]],
+		Width = 42,
+		Height = 42,
+		BlendMode = "ADD",
+		Color = {1, 1, 1, .15},
+	},
+
 	AutoCastable = {
 		Texture = [[Interface\Buttons\UI-AutoCastableOverlay]],
 		BlendMode = "BLEND",
@@ -137,14 +192,9 @@ MASQUE:AddSkin("Neuron: Default", {
 		OffsetX = 0.5,
 		OffsetY = -0.5,
 	},
-	Shine = {
-		Width = 32,
-		Height = 32,
-		OffsetX = 1,
-		OffsetY = -1,
-		AboveNormal = true,
-	},
+
 	Highlight = {
+		Texture = [[Interface\AddOns\Masque_Neuron\Default\Highlight]],
 		Width = 37,
 		Height = 37,
 		BlendMode = "ADD",
@@ -154,53 +204,23 @@ MASQUE:AddSkin("Neuron: Default", {
 		RelPoint = "CENTER",
 		OffsetX = 0.5,
 		OffsetY = -0.5,
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Highlight]],
 	},
-	Gloss = {
-		Width = 42,
-		Height = 42,
-		BlendMode = "ADD",
-		Color = {1, 1, 1, .15},
-		Texture = [[Interface\AddOns\Masque_Neuron\Default\Gloss]],
+
+	AutoCastShine = {
+		Width = 32,
+		Height = 32,
+		OffsetX = 1,
+		OffsetY = -1,
+		AboveNormal = true,
 	},
-	HotKey = {
-		JustifyH = "RIGHT",
-		JustifyV = "MIDDLE",
-		DrawLayer = "ARTWORK",
-		Width = 42,
-		Height = 10,
-		Point = "TOPRIGHT",
-		RelPoint = "TOPRIGHT",
-		OffsetX = -3,
-		OffsetY = -4,
-	},
-	Count = {
-		JustifyH = "RIGHT",
-		JustifyV = "MIDDLE",
-		DrawLayer = "ARTWORK",
-		Width = 42,
-		Height = 10,
-		Point = "BOTTOMRIGHT",
-		RelPoint = "BOTTOMRIGHT",
-		OffsetX = -3,
-		OffsetY = 4,
-	},
-	Name = {
-		Width = 42,
-		Height = 10,
-		JustifyH = "CENTER",
-		JustifyV = "BOTTOM",
-		OffsetY = 3,
-	},
-	Duration = {
-		JustifyH = "CENTER",
-		JustifyV = "MIDDLE",
-		DrawLayer = "ARTWORK",
-		Width = 42,
-		Height = 10,
-		Point = "TOP",
-		RelPoint = "BOTTOM",
+	
+	Cooldown = {
+		Width = 28,
+		Height = 28,
+		Color = {0, 0, 0, 0.6},
+		Point = "CENTER",
+		RelPoint = "CENTER",
 		OffsetX = 0,
-		OffsetY = -2,
+		OffsetY = 0,
 	},
 })
